@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	// 타임리프 엑스트라 시큐리티 라이브러리
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	// 타임리프 태그 라이브러리
+	implementation 'org.springframework.security:spring-security-taglibs'
+	// 타임리프 레이아웃 다이얼렉트 라이브러리
+	implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<th:block th:replace="~{fragments/common/meta::meta}"></th:block>
+    <th:block th:replace="~{fragments/common/link::link}"></th:block>
+</head>
+<body>
+	<div class="row">
+	
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			<!-- 헤더 -->
+			<div th:replace="~{fragments/header::header}"></div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+		
+			<!-- 컨텐츠 -->
+			<div layout:fragment="content"></div>
+			
+			<!-- 푸터 -->
+			<div th:replace="~{fragments/footer::footer}"></div>
+			
+			
+		</div>
+	</div>
+			<th:block th:replace="~{fragments/common/script::script}"></th:block>
+
+</body>
+</html>
